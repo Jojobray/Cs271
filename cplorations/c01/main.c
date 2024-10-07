@@ -1,8 +1,8 @@
 /****************************************
  * C-ploration 1 for CS 271
  * 
- * [NAME] $YOUR_NAME$
- * [TERM] FALL $YEAR$
+ * [NAME] Jordan Bray
+ * [TERM] FALL 2024
  * 
  ****************************************/
 
@@ -22,7 +22,18 @@
  */
 int add(int n)
 {
-    /** Your CODE here **/
+    int sum = 0;
+    int i;
+    
+    printf("Enter a whole number: ");
+    scanf("num", &n);
+
+    for (i = 0; i <= n; ++i){
+        sum += i;
+    }
+
+    printf("Sum = num", sum);
+    return 0;
 }   
 
 
