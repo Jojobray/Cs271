@@ -24,16 +24,12 @@ int add(int n)
 {
     int sum = 0;
     int i;
-    
-    printf("Enter a whole number: ");
-    scanf("num", &n);
 
     for (i = 0; i <= n; ++i){
         sum += i;
     }
 
-    printf("Sum = num", sum);
-    return 0;
+    return sum;
 }   
 
 
@@ -48,7 +44,11 @@ int add(int n)
  */
 int fib(int n)
 {
-    /** Your CODE here **/
+    if (n <= 1){
+        return n;
+    }
+
+    return fib(n - 1) + fib(n -2);
 }
  
  
@@ -64,7 +64,16 @@ int fib(int n)
  */
 int max(int arr[], int n)
 {
-    /** Your CODE here **/
+    int i;
+    int max = arr[0];
+
+    for (i = 1; i < n; ++i){
+        if(arr[i] > max){
+            max = arr[i];
+        }
+    }
+
+    return max;
 }
 
 /* Function: sum
@@ -79,7 +88,11 @@ int max(int arr[], int n)
  */
 int sum(int arr[], int n)
 {
-    /** Your CODE here **/
+    if (n == 0){
+        return 0;
+    }else{
+        return arr[0] + sum(arr + 1, n-1);
+    }
 }
 
 
@@ -95,7 +108,19 @@ int sum(int arr[], int n)
  *
  */
 double pie(long int n){
-    /** Your CODE here **/
+    unsigned long i;
+    long double x;
+    x = 1;
+
+    for (i = 1; i <= n; i = i+1){
+        if (i % 2 == 1){
+            x = x - (1/((2*i) + 1));
+        }else{
+            x = x + (1/((2*i) + 1));
+        }
+    }
+    x = x * 4;
+    return x;
 } 
 
 
